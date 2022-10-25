@@ -1,3 +1,5 @@
+import { combineReducers } from 'redux';
+
 const songsReducer = () => {
   // this is going to just be a static list of songs 
   // return a list of songs 
@@ -18,3 +20,9 @@ const selectedSongReducer = (selectedSong=null, action) => {
 
   return selectedSong;
 }
+
+export default combineReducers({
+  //the keys of this object are going to be the keys of the state object 
+  songs: songsReducer, 
+  selectedSong: selectedSongReducer
+})
